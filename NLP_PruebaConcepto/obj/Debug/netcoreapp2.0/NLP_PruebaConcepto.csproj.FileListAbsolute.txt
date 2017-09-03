@@ -1,0 +1,10 @@
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/obj/Debug/netcoreapp2.0/NLP_PruebaConcepto.csproj.CoreCompileInputs.cache
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/obj/Debug/netcoreapp2.0/NLP_PruebaConcepto.AssemblyInfoInputs.cache
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/obj/Debug/netcoreapp2.0/NLP_PruebaConcepto.AssemblyInfo.cs
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/bin/Debug/netcoreapp2.0/NLP_PruebaConcepto.deps.json
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/bin/Debug/netcoreapp2.0/NLP_PruebaConcepto.runtimeconfig.json
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/bin/Debug/netcoreapp2.0/NLP_PruebaConcepto.runtimeconfig.dev.json
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/bin/Debug/netcoreapp2.0/NLP_PruebaConcepto.dll
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/bin/Debug/netcoreapp2.0/NLP_PruebaConcepto.pdb
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/obj/Debug/netcoreapp2.0/NLP_PruebaConcepto.dll
+/Users/ulicesmelendez/Desktop/Repositorio/NETCore/NLP_PruebaConcepto/NLP_PruebaConcepto/obj/Debug/netcoreapp2.0/NLP_PruebaConcepto.pdb
