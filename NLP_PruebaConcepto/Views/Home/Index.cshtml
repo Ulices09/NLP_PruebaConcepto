@@ -22,9 +22,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-bottom: 20px;">
             <h1>Prueba de Concepto</h1>
-            <button onclick="watson_STT();">Probar</button>
+            <button onclick="startRecording(this);">Grabar</button>
+            <button onclick="stopRecording(this);" disabled>Detener</button>
         </div>
 
         <div class="row">
@@ -68,12 +69,39 @@
                 </div>
             </div>
         </div>-->
+
+
         
     </div>
 
     <script>
 
         var textoTTS = "";
+
+        function obtenerAudio() {
+
+            recorder && recorder.exportWAV(function(blob) {
+
+                var data = new FormData();
+                data.append("audiotts", blob, "audiotts.wav");
+
+                $.ajax({
+                    url: "/Home/GuardarAudio",
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    data: data,
+                    success: function(res) {
+                        if(res.status == "Ok"){
+                            watson_STT();
+                        }
+                        else{
+                            console.log(res.data)
+                        }
+                    }
+                });
+            });
+        }
 
         function watson_STT() {
             $.ajax({
@@ -152,12 +180,85 @@
             });
         }
 
+       
+
+
+        /////////////////////////RECORDER//////////////////////////
+
+        var audio_context;
+        var recorder;
+
+        window.onload = function init() {
+            try {
+            // webkit shim
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
+            window.URL = window.URL || window.webkitURL;
+            
+            audio_context = new AudioContext;
+            console.log('Contexto de audio preparado.');
+            console.log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'disponible.' : 'no presente.'));
+            } catch (e) {
+                alert('No web audio support in this browser!');
+            }
+            
+            navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
+            console.log('No existe salida de audio: ' + e);
+            });
+        };
+
+        function startUserMedia(stream) {
+            var input = audio_context.createMediaStreamSource(stream);            
+            recorder = new Recorder(input);
+        }
+
+        function startRecording(button) {
+            recorder && recorder.record();
+            button.disabled = true;
+            button.nextElementSibling.disabled = false;
+        }
+
+        function stopRecording(button) {
+            recorder && recorder.stop();
+            button.disabled = true;
+            button.previousElementSibling.disabled = false;
+            
+            // create WAV download link using audio data blob
+            //createDownloadLink();
+
+            obtenerAudio();
+            
+            recorder.clear();
+        }
+
+        function createDownloadLink() {
+            recorder && recorder.exportWAV(function(blob) {
+                console.log(blob);
+                obtenerAudio(blob);
+                var url = URL.createObjectURL(blob);
+                var li = document.createElement('li');
+                var au = document.createElement('audio');
+                var hf = document.createElement('a');
+                
+                au.controls = true;
+                au.src = url;
+                hf.href = url;
+                hf.download = new Date().toISOString() + '.wav';
+                hf.innerHTML = hf.download;
+                li.appendChild(au);
+                li.appendChild(hf);
+                recordingslist.appendChild(li);
+            });
+        }
+
+
     </script>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/recorder.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"

@@ -12,6 +12,8 @@ using IBM.WatsonDeveloperCloud.TextToSpeech.v1;
 using IBM.WatsonDeveloperCloud.TextToSpeech.v1.Model;
 using System.IO;
 using NLP_PruebaConcepto.Constants;
+using Microsoft.AspNetCore.Http;
+using System.Net.Http.Headers;
 
 namespace NLP_PruebaConcepto.Controllers
 {
@@ -22,12 +24,58 @@ namespace NLP_PruebaConcepto.Controllers
             return View();
         }
 
+        [HttpPost]
+        public JsonResult GuardarAudio() {
+            object result = null;
+
+            try
+            {
+                SpeechToTextService speech_to_text = new SpeechToTextService();
+                speech_to_text.SetCredential(Auth.Watson_STT.Username, Auth.Watson_STT.Password);
+
+                //long size = 0;
+                var audios = Request.Form.Files;
+                string path = "resources/audioSTT.wav";
+
+                foreach (var item in audios)
+                {
+                    //var fileName = ContentDispositionHeaderValue.Parse(item.ContentDisposition).FileName.Trim('"');
+                    //fileName = "resources/" + fileName;
+                    //size += item.Length;
+
+                    //if(System.IO.File.Exists(path)) System.IO.File.Delete(path);
+
+                    var fileStream = new FileStream(path, FileMode.Create, FileAccess.Write);
+                    item.CopyTo(fileStream);
+                    fileStream.Dispose();
+                }
+
+                
+                result = new {
+                    data = "/Home/ProcesarWatsonSTT",
+                    status = "Ok"
+                };
+            }
+            catch (Exception ex)
+            {
+                result = new {
+                    data = ex.Message,
+                    status = "Error"
+                };
+            }
+
+            return Json(result);
+        }
+
+        #region WATSON
+        
         public JsonResult ProcesarWatsonSTT(){
 
             SpeechToTextService speech_to_text = new SpeechToTextService();
             speech_to_text.SetCredential(Auth.Watson_STT.Username, Auth.Watson_STT.Password);
-            FileStream fs = System.IO.File.OpenRead("resources/audio.wav");
+            FileStream fs = System.IO.File.OpenRead("resources/audioSTT.wav");
             var result = speech_to_text.Recognize("audio/wav",fs,"","es-ES_BroadbandModel");
+            fs.Dispose();
             List<String> transcripts = new List<string>();
             foreach(var item in result.Results) {
                 foreach(var alt in item.Alternatives) {
@@ -124,7 +172,7 @@ namespace NLP_PruebaConcepto.Controllers
             {
                 TextToSpeechService text_to_speech = new TextToSpeechService(Auth.Watson_TTS.Username, Auth.Watson_TTS.Password);
                 var results = text_to_speech.Synthesize(texto, Voice.ES_SOFIA, AudioType.WAV);
-                var fileStream = new FileStream("resources/tts.wav", FileMode.Create, FileAccess.Write);
+                var fileStream = new FileStream("resources/audioTTS.wav", FileMode.Create, FileAccess.Write);
                 results.CopyTo(fileStream);
                 fileStream.Dispose();
 
@@ -143,5 +191,7 @@ namespace NLP_PruebaConcepto.Controllers
 
             return Json(result);
         }
+
+        #endregion
     }
 }
