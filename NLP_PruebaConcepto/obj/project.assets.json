@@ -2,6 +2,43 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "Bond.Core.CSharp/4.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Bond.Attributes.dll": {},
+          "lib/net45/Bond.IO.dll": {},
+          "lib/net45/Bond.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Bond.Attributes.dll": {},
+          "lib/net45/Bond.IO.dll": {},
+          "lib/net45/Bond.dll": {}
+        }
+      },
+      "Bond.CSharp/4.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Bond.Core.CSharp": "[4.2.1]",
+          "Bond.Runtime.CSharp": "[4.2.1]"
+        },
+        "build": {
+          "build/Bond.CSharp.props": {},
+          "build/Bond.CSharp.targets": {}
+        }
+      },
+      "Bond.Runtime.CSharp/4.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Bond.Core.CSharp": "[4.2.1]",
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/net45/Bond.JSON.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Bond.JSON.dll": {}
+        }
+      },
       "IBM.WatsonDeveloperCloud/1.2.0": {
         "type": "package",
         "dependencies": {
@@ -1510,6 +1547,22 @@
           "lib/netstandard1.4/Microsoft.Azure.KeyVault.WebKey.dll": {}
         }
       },
+      "Microsoft.Bing.Speech/2.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Bond.CSharp": "4.2.1",
+          "Microsoft.VisualStudio.Threading": "14.1.131",
+          "Newtonsoft.Json": "8.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Bing.Messaging.dll": {},
+          "lib/net45/Microsoft.Bing.Speech.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Bing.Messaging.dll": {},
+          "lib/net45/Microsoft.Bing.Speech.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
         "type": "package"
       },
@@ -2675,6 +2728,27 @@
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Threading/14.1.131": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Validation": "14.1.111"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Threading.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Threading.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Validation/14.1.111": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Validation.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Validation.dll": {}
         }
       },
       "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
@@ -4929,6 +5003,63 @@
     }
   },
   "libraries": {
+    "Bond.Core.CSharp/4.2.1": {
+      "sha512": "yk6Pf+dFRmfKNxcSva3zBfpY/q7/MlTdNHFafs7hHZLHardKfxTe88OV7H0ij3L9xZvWN/Hg7/enw+/KbvgYug==",
+      "type": "package",
+      "path": "bond.core.csharp/4.2.1",
+      "files": [
+        "bond.core.csharp.4.2.1.nupkg.sha512",
+        "bond.core.csharp.nuspec",
+        "lib/net40/Bond.Attributes.dll",
+        "lib/net40/Bond.Attributes.xml",
+        "lib/net40/Bond.IO.dll",
+        "lib/net40/Bond.IO.xml",
+        "lib/net40/Bond.dll",
+        "lib/net40/Bond.xml",
+        "lib/net45/Bond.Attributes.dll",
+        "lib/net45/Bond.Attributes.xml",
+        "lib/net45/Bond.IO.dll",
+        "lib/net45/Bond.IO.xml",
+        "lib/net45/Bond.dll",
+        "lib/net45/Bond.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Bond.Attributes.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Bond.Attributes.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Bond.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Bond.xml"
+      ]
+    },
+    "Bond.CSharp/4.2.1": {
+      "sha512": "oPK8YOt8mZVSBTr8NG6ae74m4SmmM/mFRLeD7xs4/oYnq4AeoDyjFct3p6dEZO03l/eaRaZJ6ATecE+AifO0/w==",
+      "type": "package",
+      "path": "bond.csharp/4.2.1",
+      "files": [
+        "bond.csharp.4.2.1.nupkg.sha512",
+        "bond.csharp.nuspec",
+        "build/Bond.CSharp.props",
+        "build/Bond.CSharp.targets",
+        "build/Common.props",
+        "build/Common.targets",
+        "readme.txt",
+        "tools/gbc.exe",
+        "tools/inc/bond/core/bond.bond",
+        "tools/inc/bond/core/bond_const.bond"
+      ]
+    },
+    "Bond.Runtime.CSharp/4.2.1": {
+      "sha512": "l+f8AzUavi3deOx4YM6X8WnHJ5W/7WUjrO/OY9xObcQUktcgcK+Yc9XcN1pgNVUFUZkGZn3L5LkrsBteyK1SYA==",
+      "type": "package",
+      "path": "bond.runtime.csharp/4.2.1",
+      "files": [
+        "bond.runtime.csharp.4.2.1.nupkg.sha512",
+        "bond.runtime.csharp.nuspec",
+        "lib/net40/Bond.JSON.dll",
+        "lib/net40/Bond.JSON.xml",
+        "lib/net45/Bond.JSON.dll",
+        "lib/net45/Bond.JSON.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Bond.JSON.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Bond.JSON.xml"
+      ]
+    },
     "IBM.WatsonDeveloperCloud/1.2.0": {
       "sha512": "Ix9wMz+I0/n1uKN3dst2aCTvJMkvIiF2r5PIK4ANPss9AGIeDaqI/J2Efrb1dEc3z3FlqonPtus/Xy1nI5aTYw==",
       "type": "package",
@@ -5998,6 +6129,18 @@
         "lib/netstandard1.4/Microsoft.Azure.KeyVault.WebKey.xml",
         "microsoft.azure.keyvault.webkey.2.0.7.nupkg.sha512",
         "microsoft.azure.keyvault.webkey.nuspec"
+      ]
+    },
+    "Microsoft.Bing.Speech/2.0.2": {
+      "sha512": "SsEDrgXCiJJxmSBzdOkYVZJyYtOavmfR72zYXmaQmGD2aGJhHGk8HZT7rIKG2bHLQ93NaA57YShR6dQ0Px17EA==",
+      "type": "package",
+      "path": "microsoft.bing.speech/2.0.2",
+      "files": [
+        "lib/net45/Microsoft.Bing.Messaging.dll",
+        "lib/net45/Microsoft.Bing.Speech.dll",
+        "lib/net45/Microsoft.Bing.Speech.xml",
+        "microsoft.bing.speech.2.0.2.nupkg.sha512",
+        "microsoft.bing.speech.nuspec"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
@@ -7524,6 +7667,43 @@
         "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.xml",
         "microsoft.rest.clientruntime.azure.3.3.7.nupkg.sha512",
         "microsoft.rest.clientruntime.azure.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Threading/14.1.131": {
+      "sha512": "g5QAyDZkQcG9YW+yUizA82AeckIz+DmQn9z/aTh2jhv7WpUy52WH96ANYAcA7c2Dq4fGDBOsj6oNL2vI+Lt20Q==",
+      "type": "package",
+      "path": "microsoft.visualstudio.threading/14.1.131",
+      "files": [
+        "lib/dotnet/Microsoft.VisualStudio.Threading.dll",
+        "lib/dotnet/Microsoft.VisualStudio.Threading.xml",
+        "lib/net45/Microsoft.VisualStudio.Threading.dll",
+        "lib/net45/Microsoft.VisualStudio.Threading.xml",
+        "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Microsoft.VisualStudio.Threading.dll",
+        "lib/portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10/Microsoft.VisualStudio.Threading.xml",
+        "microsoft.visualstudio.threading.14.1.131.nupkg.sha512",
+        "microsoft.visualstudio.threading.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Validation/14.1.111": {
+      "sha512": "IUt6f56o4p+k2s0SX6Dlo02qj5r8zoWxMpxxNa1hZM+j+xQ6L3mTb/ZVbtbqpaVotA/j25dPa2VybLO/8MEw1Q==",
+      "type": "package",
+      "path": "microsoft.visualstudio.validation/14.1.111",
+      "files": [
+        "README.txt",
+        "lib/dotnet/Microsoft.VisualStudio.Validation.dll",
+        "lib/dotnet/Microsoft.VisualStudio.Validation.xml",
+        "lib/net45/Microsoft.VisualStudio.Validation.dll",
+        "lib/net45/Microsoft.VisualStudio.Validation.xml",
+        "lib/portable-net45+win+wpa81+wp80/Microsoft.VisualStudio.Validation.dll",
+        "lib/portable-net45+win+wpa81+wp80/Microsoft.VisualStudio.Validation.xml",
+        "microsoft.visualstudio.validation.14.1.111.nupkg.sha512",
+        "microsoft.visualstudio.validation.nuspec",
+        "tools/2013/RequiresNotNull.snippet",
+        "tools/2013/RequiresNotNullOrEmpty.snippet",
+        "tools/2015/RequiresNotNull.snippet",
+        "tools/2015/RequiresNotNullOrEmpty.snippet",
+        "tools/install-snippets.cmd",
+        "tools/uninstall-snippets.cmd"
       ]
     },
     "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
@@ -13013,6 +13193,7 @@
       "IBM.WatsonDeveloperCloud.SpeechToText.v1 >= 1.2.0",
       "IBM.WatsonDeveloperCloud.TextToSpeech.v1 >= 1.2.0",
       "Microsoft.AspNetCore.All >= 2.0.0",
+      "Microsoft.Bing.Speech >= 2.0.2",
       "Microsoft.NETCore.App >= 2.0.0",
       "System.IO.FileSystem >= 4.3.0"
     ]
@@ -13082,6 +13263,10 @@
           "IBM.WatsonDeveloperCloud.TextToSpeech.v1": {
             "target": "Package",
             "version": "1.2.0"
+          },
+          "Microsoft.Bing.Speech": {
+            "target": "Package",
+            "version": "2.0.2"
           }
         },
         "imports": [
@@ -13091,5 +13276,67 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Microsoft.Bing.Speech 2.0.2 depends on Newtonsoft.Json (>= 8.0.0) but Newtonsoft.Json 8.0.0 was not found. An approximate best match of Newtonsoft.Json 8.0.1 was resolved.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Bond.Core.CSharp 4.2.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Bond.Core.CSharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Bond.Runtime.CSharp 4.2.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Bond.Runtime.CSharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Bing.Speech 2.0.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Bing.Speech",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.VisualStudio.Threading 14.1.131' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.VisualStudio.Threading",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.VisualStudio.Validation 14.1.111' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.VisualStudio.Validation",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

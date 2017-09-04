@@ -10,6 +10,7 @@
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="IBM.WatsonDeveloperCloud.NaturalLanguageUnderstanding.v1" Version="1.2.0" />
     <PackageReference Include="IBM.WatsonDeveloperCloud.TextToSpeech.v1" Version="1.2.0" />
+    <PackageReference Include="Microsoft.Bing.Speech" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>

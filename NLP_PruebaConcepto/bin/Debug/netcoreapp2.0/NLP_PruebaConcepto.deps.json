@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "48d6ef4cfa272942490a5cbe4065525c805ed4e9"
+    "signature": "ff3a8e81653923994d8fee51c6ca568254d64b5a"
   },
   "compilationOptions": {
     "defines": [
@@ -27,6 +27,7 @@
           "IBM.WatsonDeveloperCloud.SpeechToText.v1": "1.2.0",
           "IBM.WatsonDeveloperCloud.TextToSpeech.v1": "1.2.0",
           "Microsoft.AspNetCore.All": "2.0.0",
+          "Microsoft.Bing.Speech": "2.0.2",
           "Microsoft.NETCore.App": "2.0.0",
           "System.IO.FileSystem": "4.3.0"
         },
@@ -35,6 +36,36 @@
         },
         "compile": {
           "NLP_PruebaConcepto.dll": {}
+        }
+      },
+      "Bond.Core.CSharp/4.2.1": {
+        "runtime": {
+          "lib/net45/Bond.Attributes.dll": {},
+          "lib/net45/Bond.IO.dll": {},
+          "lib/net45/Bond.dll": {}
+        },
+        "compile": {
+          "lib/net45/Bond.Attributes.dll": {},
+          "lib/net45/Bond.IO.dll": {},
+          "lib/net45/Bond.dll": {}
+        }
+      },
+      "Bond.CSharp/4.2.1": {
+        "dependencies": {
+          "Bond.Core.CSharp": "4.2.1",
+          "Bond.Runtime.CSharp": "4.2.1"
+        }
+      },
+      "Bond.Runtime.CSharp/4.2.1": {
+        "dependencies": {
+          "Bond.Core.CSharp": "4.2.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "runtime": {
+          "lib/net45/Bond.JSON.dll": {}
+        },
+        "compile": {
+          "lib/net45/Bond.JSON.dll": {}
         }
       },
       "IBM.WatsonDeveloperCloud/1.2.0": {
@@ -1440,6 +1471,21 @@
           "lib/netstandard1.4/Microsoft.Azure.KeyVault.WebKey.dll": {}
         }
       },
+      "Microsoft.Bing.Speech/2.0.2": {
+        "dependencies": {
+          "Bond.CSharp": "4.2.1",
+          "Microsoft.VisualStudio.Threading": "14.1.131",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Bing.Messaging.dll": {},
+          "lib/net45/Microsoft.Bing.Speech.dll": {}
+        },
+        "compile": {
+          "lib/net45/Microsoft.Bing.Messaging.dll": {},
+          "lib/net45/Microsoft.Bing.Speech.dll": {}
+        }
+      },
       "Microsoft.CodeAnalysis.Analyzers/1.1.0": {},
       "Microsoft.CodeAnalysis.Common/2.3.1": {
         "dependencies": {
@@ -2331,6 +2377,25 @@
         },
         "compile": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Threading/14.1.131": {
+        "dependencies": {
+          "Microsoft.VisualStudio.Validation": "14.1.111"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Threading.dll": {}
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Threading.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Validation/14.1.111": {
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Validation.dll": {}
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Validation.dll": {}
         }
       },
       "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
@@ -4124,6 +4189,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Bond.Core.CSharp/4.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yk6Pf+dFRmfKNxcSva3zBfpY/q7/MlTdNHFafs7hHZLHardKfxTe88OV7H0ij3L9xZvWN/Hg7/enw+/KbvgYug==",
+      "path": "bond.core.csharp/4.2.1",
+      "hashPath": "bond.core.csharp.4.2.1.nupkg.sha512"
+    },
+    "Bond.CSharp/4.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oPK8YOt8mZVSBTr8NG6ae74m4SmmM/mFRLeD7xs4/oYnq4AeoDyjFct3p6dEZO03l/eaRaZJ6ATecE+AifO0/w==",
+      "path": "bond.csharp/4.2.1",
+      "hashPath": "bond.csharp.4.2.1.nupkg.sha512"
+    },
+    "Bond.Runtime.CSharp/4.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l+f8AzUavi3deOx4YM6X8WnHJ5W/7WUjrO/OY9xObcQUktcgcK+Yc9XcN1pgNVUFUZkGZn3L5LkrsBteyK1SYA==",
+      "path": "bond.runtime.csharp/4.2.1",
+      "hashPath": "bond.runtime.csharp.4.2.1.nupkg.sha512"
+    },
     "IBM.WatsonDeveloperCloud/1.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4775,6 +4861,13 @@
       "path": "microsoft.azure.keyvault.webkey/2.0.7",
       "hashPath": "microsoft.azure.keyvault.webkey.2.0.7.nupkg.sha512"
     },
+    "Microsoft.Bing.Speech/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SsEDrgXCiJJxmSBzdOkYVZJyYtOavmfR72zYXmaQmGD2aGJhHGk8HZT7rIKG2bHLQ93NaA57YShR6dQ0Px17EA==",
+      "path": "microsoft.bing.speech/2.0.2",
+      "hashPath": "microsoft.bing.speech.2.0.2.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "type": "package",
       "serviceable": true,
@@ -5264,6 +5357,20 @@
       "sha512": "sha512-6u8JIuvrztse4tPOcvNzAJuzGBP0uY+Ijggk8ZYhp0siGEZ1XfZylf1vpNGUicvwcrhhoIgDW73Z1L6QGssr2g==",
       "path": "microsoft.rest.clientruntime.azure/3.3.7",
       "hashPath": "microsoft.rest.clientruntime.azure.3.3.7.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Threading/14.1.131": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g5QAyDZkQcG9YW+yUizA82AeckIz+DmQn9z/aTh2jhv7WpUy52WH96ANYAcA7c2Dq4fGDBOsj6oNL2vI+Lt20Q==",
+      "path": "microsoft.visualstudio.threading/14.1.131",
+      "hashPath": "microsoft.visualstudio.threading.14.1.131.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Validation/14.1.111": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IUt6f56o4p+k2s0SX6Dlo02qj5r8zoWxMpxxNa1hZM+j+xQ6L3mTb/ZVbtbqpaVotA/j25dPa2VybLO/8MEw1Q==",
+      "path": "microsoft.visualstudio.validation/14.1.111",
+      "hashPath": "microsoft.visualstudio.validation.14.1.111.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.BrowserLink/2.0.0": {
       "type": "package",

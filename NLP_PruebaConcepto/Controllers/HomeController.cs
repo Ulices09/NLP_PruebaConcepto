@@ -14,6 +14,7 @@ using System.IO;
 using NLP_PruebaConcepto.Constants;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http.Headers;
+using NLP_PruebaConcepto.Helpers;
 
 namespace NLP_PruebaConcepto.Controllers
 {
@@ -191,6 +192,38 @@ namespace NLP_PruebaConcepto.Controllers
 
             return Json(result);
         }
+
+        #endregion
+
+        #region AZURE
+
+        public JsonResult ProcesarAzureSTT(){
+
+            object result = null;
+
+            try
+            {
+                 AzureSpeechToText speech_to_text = new AzureSpeechToText();
+                //FileStream fs = System.IO.File.OpenRead("resources/audioSTT.wav");
+                var resultado = speech_to_text.Run("resources/audioSTT.wav", "Spanish", APIUris.AzureSTT.ShortPhraseUrl, Auth.Azure_STT.SubscriptionKey);
+
+                result = new {
+                    data = resultado,
+                    status = "Ok"
+                };
+            }
+            catch (Exception ex)
+            {
+                result = new {
+                    data = ex.Message,
+                    status = "Error"
+                };
+            }
+           
+            //fs.Dispose();
+
+            return Json(result);
+        } 
 
         #endregion
     }
