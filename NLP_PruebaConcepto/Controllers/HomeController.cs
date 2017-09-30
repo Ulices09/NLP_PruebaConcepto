@@ -15,6 +15,7 @@ using NLP_PruebaConcepto.Constants;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http.Headers;
 using NLP_PruebaConcepto.Helpers;
+using Google.Cloud.Speech.V1;
 
 namespace NLP_PruebaConcepto.Controllers
 {
@@ -188,6 +189,43 @@ namespace NLP_PruebaConcepto.Controllers
                     data = ex.Message,
                     status = "Error"
                 };
+            }
+
+            return Json(result);
+        }
+
+        #endregion
+
+        #region Google Cloud Platform
+
+        public JsonResult ProcesarGoogleSTT(){
+            
+            List<string> result = new List<string>();
+            
+            try
+            {
+                var speech = SpeechClient.Create();
+                //FileStream fs = System.IO.File.OpenRead("resources/audioSTT.wav");
+                var response = speech.Recognize(new RecognitionConfig()
+                {
+                    Encoding = RecognitionConfig.Types.AudioEncoding.Flac,
+                    SampleRateHertz = 48000,
+                    LanguageCode = "es-PE"
+                }, RecognitionAudio.FromFile("resources/audioSTT.flac"));
+
+                foreach (var item in response.Results)
+                {
+                    foreach (var alternative in item.Alternatives)
+                    {
+                        //Console.WriteLine(alternative.Transcript);
+                        result.Add(alternative.Transcript);
+                    }
+                }   
+            }
+            catch (Exception exception)
+            {
+                
+                throw;
             }
 
             return Json(result);

@@ -18,3 +18,13 @@ c:\Users\win7\Desktop\NLP SEGUNDA\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP
 c:\Users\win7\Desktop\NLP SEGUNDA\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.AssemblyInfo.cs
 c:\Users\win7\Desktop\NLP SEGUNDA\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.dll
 c:\Users\win7\Desktop\NLP SEGUNDA\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.pdb
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.csproj.CoreCompileInputs.cache
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.AssemblyInfoInputs.cache
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.AssemblyInfo.cs
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.dll
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\obj\Debug\netcoreapp2.0\NLP_PruebaConcepto.pdb
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\bin\Debug\netcoreapp2.0\NLP_PruebaConcepto.deps.json
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\bin\Debug\netcoreapp2.0\NLP_PruebaConcepto.runtimeconfig.json
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\bin\Debug\netcoreapp2.0\NLP_PruebaConcepto.runtimeconfig.dev.json
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\bin\Debug\netcoreapp2.0\NLP_PruebaConcepto.dll
+c:\Users\win7\Desktop\NLPruebaConcepto\NLP_PruebaConcepto\NLP_PruebaConcepto\bin\Debug\netcoreapp2.0\NLP_PruebaConcepto.pdb

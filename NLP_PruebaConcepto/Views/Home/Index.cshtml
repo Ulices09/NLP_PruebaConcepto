@@ -95,13 +95,24 @@
                     data: data,
                     success: function(res) {
                         if(res.status == "Ok"){
-                            watson_STT();
+                            Google_STT();
                         }
                         else{
                             console.log(res.data)
                         }
                     }
                 });
+            });
+        }
+
+        function Google_STT() {
+            $.ajax({
+                url: "/Home/ProcesarGoogleSTT",
+                type: 'GET',
+                dataType: 'json',
+                success: function(res) {
+                    console.log(res);
+                }
             });
         }
 
